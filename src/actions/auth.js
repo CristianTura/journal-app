@@ -19,9 +19,9 @@ export const startLoginEmailPassword = ( email, password ) => {
                 dispatch( finishLoading() );
             })
             .catch( e => {
-                console.log(e.message);
+
                 dispatch( finishLoading() );
-                Swal.fire('Error', e.message, 'error')
+                Swal.fire('Error', 'There is no user record corresponding to this identifier.', 'error')
             })
     }
 };
