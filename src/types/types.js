@@ -7,6 +7,7 @@ export const types = {
 
     uiSetError: '[UI] Set Error',
     uiRemoveError: '[UI] Remove Error',
+    uiToggleSidebar: '[UI] Toggle Sidebar',
 
     uiStartLoading: '[UI] Start Loading',
     uiFinishLoading: '[UI] Finish loading',

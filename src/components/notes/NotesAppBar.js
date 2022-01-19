@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'
 import { startSaveNote, startUploading } from '../../actions/notes'
+import { uiToggleSidebar } from '../../actions/ui';
 
 const NotesAppBar = () => {
 
@@ -27,9 +28,25 @@ const NotesAppBar = () => {
         
     }
 
+    const handleVisibleMenu = () => {
+
+        dispatch( uiToggleSidebar() );
+
+    }
+
+    const date = new Date().toDateString();
+    
+
     return (
         <div className='notes__appbar'>
-            <span>28 de agosto 2020</span>
+
+            <i 
+                className="fas fa-angle-right notes__menu visible"
+                onClick={ handleVisibleMenu }
+            ></i>
+
+            <span>{date}</span>
+
 
             <input 
                 id="fileSelector"

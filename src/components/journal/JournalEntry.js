@@ -2,6 +2,7 @@ import React from 'react';
 import moment from "moment";
 import { useDispatch } from 'react-redux';
 import { activeNote } from '../../actions/notes';
+import { uiToggleSidebar } from '../../actions/ui';
 
 const JournalEntry = ({ id, date, title, body, url }) => {
 
@@ -16,6 +17,10 @@ const JournalEntry = ({ id, date, title, body, url }) => {
                 date, title, body, url
             } 
             ) )
+
+        if (window.innerWidth < 768) {
+            dispatch( uiToggleSidebar() )
+        }
  
     };
    

@@ -7,8 +7,9 @@ import JournalEntries from './JournalEntries'
 const Sidebar = () => {
 
     const dispatch = useDispatch();
-    const {name } = useSelector(state => state.auth)
-
+    const { name } = useSelector(state => state.auth)
+    const { showSidebar }  = useSelector( state => state.ui );
+    
 
     const handleLogout = () => {
 
@@ -21,7 +22,7 @@ const Sidebar = () => {
     }
 
     return (
-        <aside className='journal__sidebar'>
+        <aside className={`journal__sidebar ${!showSidebar && "handle-sidebar"}`}>
             
             <div className='journal__sidebar-navbar'>
                 <h3 className='mt-5'>

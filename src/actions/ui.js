@@ -18,4 +18,6 @@ export const finishLoading = () => ({
     type: types.uiFinishLoading
 });
 
-
+export const uiToggleSidebar = () => ({
+    type: types.uiToggleSidebar
+});

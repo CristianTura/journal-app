@@ -11,8 +11,13 @@
     height: 100vh;
     padding-left: 10px;
     padding-right: 10px;
-    width: 450px;
+    width: 100vw;
 }
+
+.handle-sidebar {
+    display: none;
+}
+
 
 .journal__sidebar-navbar {
     display: flex;

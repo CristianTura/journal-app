@@ -1,4 +1,3 @@
-
 .notes__main-content {
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@
 .notes-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     padding: 20px;
 }
 
@@ -48,4 +47,19 @@
     box-shadow: 5px 5px $dark-grey;
     height: 150px;
 
+}
+
+.notes__creationDate {
+    color: $dark-grey;
+    font-size: 10px;
+    align-self: flex-end;
+}
+
+.notes__menu {
+    cursor: pointer;
+    display: none;
+}
+
+.notes__menu.visible {
+    display: unset; 
 }

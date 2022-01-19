@@ -2,7 +2,8 @@ import { types } from "../types/types";
 
 const initilaState = {
     loading: false,
-    msgError: null
+    msgError: null,
+    showSidebar: true
 }
 
 export const uiReducer = ( state = initilaState, action ) => {
@@ -35,6 +36,12 @@ export const uiReducer = ( state = initilaState, action ) => {
                 ...state,
                 loading: false
             };
+
+        case types.uiToggleSidebar:
+            return{
+                ...state,
+                showSidebar: !state.showSidebar
+            }
     
         default:
             return state;

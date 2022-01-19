@@ -33,6 +33,8 @@ const NoteScreen = () => {
         dispatch( startDeleting( id ) );
     }
 
+    const creationDate = new Date(note.date).toString().slice(0,15);
+
     return (
         <div className='notes__main-content'>
 
@@ -64,6 +66,8 @@ const NoteScreen = () => {
                             <img src={ note.url } alt="Imagen" />
                         </div>
                 }
+
+                <p className='notes__creationDate'>Created on: {creationDate}</p>
 
             </div>
 
