@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile, getAuth, signInWithPopup
 import { googleAuthProvider } from '../firebase/firebase-config';
 import { types } from "../types/types";
 import { finishLoading, startLoading } from './ui';
+import { noteLogout } from './notes';
 
 export const startLoginEmailPassword = ( email, password ) => {
     return ( dispatch ) => {
@@ -21,7 +22,7 @@ export const startLoginEmailPassword = ( email, password ) => {
             .catch( e => {
 
                 dispatch( finishLoading() );
-                Swal.fire('Error', 'There is no user record corresponding to this identifier.', 'error')
+                Swal.fire('Error', e.message , 'error')
             })
     }
 };
@@ -43,6 +44,7 @@ export const startRegisterEmailPassword = ( email, password, name ) => {
                 } )
                 .catch( e => {
                     console.log(e)
+                    Swal.fire('Error', e.message , 'error')
                 })
 
     }
@@ -74,7 +76,8 @@ export const startLogout = () => {
     return async ( dispatch ) => {
         const auth = getAuth();
             await signOut( auth );
-
+        
+        dispatch ( noteLogout ());
         dispatch( logout() );
     }
 }
