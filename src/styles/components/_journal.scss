@@ -1,6 +1,7 @@
 
 .journal__main-content {
     display: flex;
+    height: 100vh;
 }
 
 .journal__sidebar {
@@ -8,7 +9,6 @@
     color: white;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     padding-left: 10px;
     padding-right: 10px;
     width: 100vw;
